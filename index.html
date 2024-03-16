@@ -326,13 +326,9 @@
                   <a class="nav-link me-4 active" href="#billboard">首頁</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link me-4 active"
-                    href="#billboard"
-                    id="about-link"
-                    >關於學會</a
-                  >
+                  <a class="nav-link me-4 active" id="about-link">關於學會</a>
                   <div id="about-dropdown" class="dropdown-content">
+                    <a href="about.html">關於學會</a>
                     <a href="#">學會簡介</a>
                     <a href="#">組織章程</a>
                     <a href="#">學會組織</a>
@@ -343,14 +339,14 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-4" href="#mobile-products"
+                  <a class="nav-link me-4" href="eachSchool.html"
                     >各校系資管所</a
                   >
                 </li>
                 <li class="nav-item">
                   <a
                     class="nav-link me-4 active"
-                    href="#billboard"
+                    href="publish.html"
                     id="about-link"
                     >研究及出版品</a
                   >
@@ -361,13 +357,13 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-4" href="#yearly-sale">活動花絮</a>
+                  <a class="nav-link me-4" href="event.html">活動花絮</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-4" href="#latest-blog">聯絡我們</a>
+                  <a class="nav-link me-4" href="contact.html">聯絡我們</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-4" href="#latest-blog">English</a>
+                  <a class="nav-link me-4" href="english.html">English</a>
                 </li>
 
                 <li class="nav-item">
@@ -476,12 +472,10 @@
       </div>
     </section>
 
-    <!-- 墊高 -->
-    <p style="height: 20px"></p>
-
     <section
       id="mobile-products"
       class="product-store position-relative padding-large no-padding-top"
+      style="margin-top: 20px"
     >
       <div class="container">
         <div class="row">
@@ -516,7 +510,7 @@
                     <p class="news-content">
                       在這個論壇上，您將了解到資訊管理領域的最新趨勢技術，以應對不斷變化的數位時代挑戰。
                     </p>
-                    <a href="#" class="btn btn-dark">了解更多</a>
+                    <a href="#" class="btn">了解更多</a>
                   </div>
                 </div>
               </div>
@@ -535,7 +529,7 @@
                     <p class="news-content">
                       在這個論壇上，您將了解到資訊管理領域的最新趨勢技術，以應對不斷變化的數位時代挑戰。
                     </p>
-                    <a href="#" class="btn btn-dark">了解更多</a>
+                    <a href="#" class="btn">了解更多</a>
                   </div>
                 </div>
               </div>
@@ -554,7 +548,7 @@
                     <p class="news-content">
                       探索人工智能技術如何影響資訊安全，並學習如何利用AI來增強安全防護，保護您的數據和系統。
                     </p>
-                    <a href="#" class="btn btn-dark">了解更多</a>
+                    <a href="#" class="btn">了解更多</a>
                   </div>
                 </div>
               </div>
@@ -573,7 +567,7 @@
                     <p class="news-content">
                       了解區塊鏈技術的最新應用案例，以及如何將其應用於資訊管理中，保護數據的完整性和安全性。
                     </p>
-                    <a href="#" class="btn btn-dark">了解更多</a>
+                    <a href="#" class="btn">了解更多</a>
                   </div>
                 </div>
               </div>
@@ -592,7 +586,7 @@
                     <p class="news-content">
                       探討智慧城市發展背景下的資訊安全挑戰，並分享智慧城市建設中的最佳實踐和安全解決方案。
                     </p>
-                    <a href="#" class="btn btn-dark">了解更多</a>
+                    <a href="#" class="btn">了解更多</a>
                   </div>
                 </div>
               </div>
@@ -775,14 +769,19 @@
             >
               <div class="carousel-inner">
                 <h2 class="section-title text-center mb-4">資訊管理學會</h2>
+                <h3 class="text-center">
+                  <img
+                    src="pics/multiple-users-silhouette.png"
+                    alt=""
+                    width="64px"
+                    height="64px"
+                  />
+                </h3>
+
                 <!-- 新增的區塊標題 -->
                 <div class="carousel-item active">
                   <div class="icon-box text-center">
-                    <div class="icon-box-icon mb-3">
-                      <svg class="cart-outline" width="64" height="64">
-                        <use xlink:href="#cart-outline" />
-                      </svg>
-                    </div>
+                    <img class="icon-box-image" src="pics/event-7.jpg" alt="" />
                     <div class="icon-box-content">
                       <h3 class="card-title text-uppercase text-dark">
                         資訊管理學會
@@ -793,13 +792,10 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="carousel-item">
                   <div class="icon-box text-center">
-                    <div class="icon-box-icon mb-3">
-                      <svg class="cart-outline" width="64" height="64">
-                        <use xlink:href="#cart-outline" />
-                      </svg>
-                    </div>
+                    <img class="icon-box-image" src="pics/event-7.jpg" alt="" />
                     <div class="icon-box-content">
                       <h3 class="card-title text-uppercase text-dark">123</h3>
                       <p class="text-muted">
@@ -808,6 +804,7 @@
                     </div>
                   </div>
                 </div>
+
                 <!-- 在此可增加更多輪播項目 -->
               </div>
               <!-- 輪播控制元素 -->
@@ -841,20 +838,25 @@
           <!-- 第二個輪播 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div
-              id="carouselExampleIndicators1"
+              id="carouselExampleIndicators2"
               class="carousel slide"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
-                <h2 class="section-title text-center mb-4">資訊管理學會</h2>
+                <h2 class="section-title text-center mb-4">學校</h2>
+                <h3 class="text-center">
+                  <img
+                    src="pics/graduation-hat.png"
+                    alt=""
+                    width="64px"
+                    height="64px"
+                  />
+                </h3>
+
                 <!-- 新增的區塊標題 -->
                 <div class="carousel-item active">
                   <div class="icon-box text-center">
-                    <div class="icon-box-icon mb-3">
-                      <svg class="cart-outline" width="64" height="64">
-                        <use xlink:href="#cart-outline" />
-                      </svg>
-                    </div>
+                    <img class="icon-box-image" src="pics/event-7.jpg" alt="" />
                     <div class="icon-box-content">
                       <h3 class="card-title text-uppercase text-dark">
                         資訊管理學會
@@ -867,11 +869,7 @@
                 </div>
                 <div class="carousel-item">
                   <div class="icon-box text-center">
-                    <div class="icon-box-icon mb-3">
-                      <svg class="cart-outline" width="64" height="64">
-                        <use xlink:href="#cart-outline" />
-                      </svg>
-                    </div>
+                    <img class="icon-box-image" src="pics/event-7.jpg" alt="" />
                     <div class="icon-box-content">
                       <h3 class="card-title text-uppercase text-dark">123</h3>
                       <p class="text-muted">
@@ -886,7 +884,7 @@
               <button
                 class="carousel-control-prev"
                 type="button"
-                data-bs-target="#carouselExampleIndicators1"
+                data-bs-target="#carouselExampleIndicators2"
                 data-bs-slide="prev"
               >
                 <span
@@ -898,7 +896,7 @@
               <button
                 class="carousel-control-next"
                 type="button"
-                data-bs-target="#carouselExampleIndicators1"
+                data-bs-target="#carouselExampleIndicators2"
                 data-bs-slide="next"
               >
                 <span
@@ -913,20 +911,25 @@
           <!-- 第三個輪播 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div
-              id="carouselExampleIndicators1"
+              id="carouselExampleIndicators3"
               class="carousel slide"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
-                <h2 class="section-title text-center mb-4">資訊管理學會</h2>
+                <h2 class="section-title text-center mb-4">業界</h2>
+                <h3 class="text-center">
+                  <img
+                    src="pics/building.png"
+                    alt=""
+                    width="64px"
+                    height="64px"
+                  />
+                </h3>
+
                 <!-- 新增的區塊標題 -->
                 <div class="carousel-item active">
                   <div class="icon-box text-center">
-                    <div class="icon-box-icon mb-3">
-                      <svg class="cart-outline" width="64" height="64">
-                        <use xlink:href="#cart-outline" />
-                      </svg>
-                    </div>
+                    <img class="icon-box-image" src="pics/event-7.jpg" alt="" />
                     <div class="icon-box-content">
                       <h3 class="card-title text-uppercase text-dark">
                         資訊管理學會
@@ -939,11 +942,7 @@
                 </div>
                 <div class="carousel-item">
                   <div class="icon-box text-center">
-                    <div class="icon-box-icon mb-3">
-                      <svg class="cart-outline" width="64" height="64">
-                        <use xlink:href="#cart-outline" />
-                      </svg>
-                    </div>
+                    <img class="icon-box-image" src="pics/event-7.jpg" alt="" />
                     <div class="icon-box-content">
                       <h3 class="card-title text-uppercase text-dark">123</h3>
                       <p class="text-muted">
@@ -958,7 +957,7 @@
               <button
                 class="carousel-control-prev"
                 type="button"
-                data-bs-target="#carouselExampleIndicators1"
+                data-bs-target="#carouselExampleIndicators3"
                 data-bs-slide="prev"
               >
                 <span
@@ -970,7 +969,7 @@
               <button
                 class="carousel-control-next"
                 type="button"
-                data-bs-target="#carouselExampleIndicators1"
+                data-bs-target="#carouselExampleIndicators3"
                 data-bs-slide="next"
               >
                 <span

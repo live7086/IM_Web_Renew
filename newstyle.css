@@ -130,3 +130,15 @@
 .icon-box:hover .icon-box-content {
   opacity: 1; /* 滑鼠懸停時，將透明度設置為1，讓文字顯示 */
 }
+
+.icon-box-image {
+  opacity: 1;
+  transition: opacity 0.3s ease; /* 使用opacity屬性來實現動畫效果 */
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+}
+.icon-box-change-image:hover .icon-box-image {
+  opacity: 0.5; /* 初始透明度為0，讓文字隱藏 */
+  transition: opacity 0.3s ease; /* 使用opacity屬性來實現動畫效果 */
+}
