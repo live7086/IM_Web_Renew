@@ -277,11 +277,13 @@
     <header
       id="header"
       class="site-header header-scrolled position-fixed text-black bg-light"
+      style="height: 65px"
     >
       <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
-            <img src="images/main-logo.png" class="logo" />
+            <h3>&nbsp&nbsp&nbspCSIM</h3>
+            <!-- <img src="images/main-logo.png" class="logo" /> -->
           </a>
           <button
             class="navbar-toggler d-flex d-lg-none order-3 p-2"
@@ -314,6 +316,7 @@
                 data-bs-target="#bdNavbar"
               ></button>
             </div>
+
             <div class="offcanvas-body">
               <ul
                 id="navbar"
@@ -323,7 +326,21 @@
                   <a class="nav-link me-4 active" href="#billboard">首頁</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-4" href="#company-services">關於學會</a>
+                  <a
+                    class="nav-link me-4 active"
+                    href="#billboard"
+                    id="about-link"
+                    >關於學會</a
+                  >
+                  <div id="about-dropdown" class="dropdown-content">
+                    <a href="#">學會簡介</a>
+                    <a href="#">組織章程</a>
+                    <a href="#">學會組織</a>
+                    <a href="#">理監事</a>
+                    <a href="#">申請入會</a>
+                    <a href="#">會議記錄</a>
+                    <a href="#">資料下載</a>
+                  </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link me-4" href="#mobile-products"
@@ -331,9 +348,17 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-4" href="#smart-watches"
+                  <a
+                    class="nav-link me-4 active"
+                    href="#billboard"
+                    id="about-link"
                     >研究及出版品</a
                   >
+                  <div id="about-dropdown" class="dropdown-content">
+                    <a href="#">資訊管理學報</a>
+                    <a href="#">研討會論文集</a>
+                    <a href="#">論文查詢</a>
+                  </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link me-4" href="#yearly-sale">活動花絮</a>
@@ -392,15 +417,16 @@
                 <div class="banner-content">
                   <h1
                     class="display-2 text-uppercase text-dark pb-5 align-content-center"
-                    style="width: 1000px"
                   >
                     中華民國資訊管理學會
                   </h1>
-                  <a
-                    href="shop.html"
-                    class="btn btn-medium btn-dark text-uppercase btn-rounded-none"
-                    >了解更多</a
-                  >
+                  <div class="fixed-button">
+                    <a
+                      href="shop.html"
+                      class="btn btn-medium text-uppercase btn-rounded-none"
+                      >了解更多</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -411,14 +437,18 @@
               <img src="pics/event-3.jpg" alt="banner" />
               <div class="carousel-caption">
                 <div class="banner-content">
-                  <h1 class="display-2 text-uppercase text-dark pb-5">
-                    Technology Hack You Won't Get
-                  </h1>
-                  <a
-                    href="shop.html"
-                    class="btn btn-medium btn-dark text-uppercase btn-rounded-none"
-                    >Shop Product</a
+                  <h1
+                    class="display-2 text-uppercase text-dark pb-5 align-content-center"
                   >
+                    第35屆國際資訊管理學術研討會
+                  </h1>
+                  <div class="fixed-button">
+                    <a
+                      href="shop.html"
+                      class="btn btn-medium text-uppercase btn-rounded-none"
+                      >報名參加</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -469,137 +499,100 @@
               ></span>
             </h2>
           </div>
-
           <div class="swiper product-swiper">
             <div class="swiper-wrapper">
               <!-- 第一個 -->
               <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div style="width: 315px; height: 418px">
-                    <div class="image-holder">
-                      <h3 class="news-title">ICIM2024</h3>
-                      <p class="high"></p>
-                      <span class="news-content"
-                        >第35屆國際資訊管理學術研討會(ICIM2024)開始囉!相關訊息請參閱研討會網站:</span
-                      >
-                      <p class="high"></p>
-                    </div>
-                    <div>
-                      <img src="pics/event-1.jpg" alt="" class="news-pics" />
-                    </div>
-                    <div class="cart-concern position-absolute">
-                      <div class="cart-button d-flex">
-                        <a href="#" class="btn btn-medium btn-black"
-                          >了解更多</a
-                        >
-                      </div>
-                    </div>
+                <div class="product-card">
+                  <div class="image-container">
+                    <img
+                      src="pics/event-1.jpg"
+                      alt="產品圖片"
+                      class="product-image"
+                    />
+                  </div>
+                  <div class="content-container">
+                    <h2 class="news-title">資訊管理趨勢論壇</h2>
+                    <p class="news-content">
+                      在這個論壇上，您將了解到資訊管理領域的最新趨勢技術，以應對不斷變化的數位時代挑戰。
+                    </p>
+                    <a href="#" class="btn btn-dark">了解更多</a>
                   </div>
                 </div>
               </div>
-
               <!-- 第二個 -->
               <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div style="width: 315px; height: 418px">
-                    <div class="image-holder">
-                      <h3 class="news-title">資訊管理趨勢論壇</h3>
-                      <p class="high"></p>
-                      <span class="news-content"
-                        >在這個論壇上，您將了解到資訊管理領域的最新趨勢技術，以應對不斷變化的數位時代挑戰。</span
-                      >
-                      <p class="high"></p>
-                    </div>
-                    <div>
-                      <img src="pics/event-1.jpg" alt="" class="news-pics" />
-                    </div>
-                    <div class="cart-concern position-absolute">
-                      <div class="cart-button d-flex">
-                        <a href="#" class="btn btn-medium btn-black"
-                          >了解更多</a
-                        >
-                      </div>
-                    </div>
+                <div class="product-card">
+                  <div class="image-container">
+                    <img
+                      src="pics/event-2.jpg"
+                      alt="產品圖片"
+                      class="product-image"
+                    />
+                  </div>
+                  <div class="content-container">
+                    <h2 class="news-title">資訊管理趨勢論壇</h2>
+                    <p class="news-content">
+                      在這個論壇上，您將了解到資訊管理領域的最新趨勢技術，以應對不斷變化的數位時代挑戰。
+                    </p>
+                    <a href="#" class="btn btn-dark">了解更多</a>
                   </div>
                 </div>
               </div>
-
               <!-- 第三個 -->
               <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div style="width: 315px; height: 418px">
-                    <div class="image-holder">
-                      <h3 class="news-title">AI與資訊安全研討會</h3>
-                      <p class="high"></p>
-                      <span class="news-content"
-                        >探索人工智能技術如何影響資訊安全，並學習如何利用AI來增強安全防護，保護您的數據和系統。</span
-                      >
-                      <p class="high"></p>
-                    </div>
-                    <div>
-                      <img src="pics/event-1.jpg" alt="" class="news-pics" />
-                    </div>
-                    <div class="cart-concern position-absolute">
-                      <div class="cart-button d-flex">
-                        <a href="#" class="btn btn-medium btn-black"
-                          >了解更多</a
-                        >
-                      </div>
-                    </div>
+                <div class="product-card">
+                  <div class="image-container">
+                    <img
+                      src="pics/event-3.jpg"
+                      alt="產品圖片"
+                      class="product-image"
+                    />
+                  </div>
+                  <div class="content-container">
+                    <h2 class="news-title">AI與資訊安全研討會</h2>
+                    <p class="news-content">
+                      探索人工智能技術如何影響資訊安全，並學習如何利用AI來增強安全防護，保護您的數據和系統。
+                    </p>
+                    <a href="#" class="btn btn-dark">了解更多</a>
                   </div>
                 </div>
               </div>
-
               <!-- 第四個 -->
               <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div style="width: 315px; height: 418px">
-                    <div class="image-holder">
-                      <h3 class="news-title">
-                        區塊鏈應用與<br />資訊管理研討會
-                      </h3>
-                      <p class="high"></p>
-                      <span class="news-content"
-                        >了解區塊鏈技術的最新應用案例，以及如何將其應用於資訊管理中，保護數據的完整性和安全性。</span
-                      >
-                      <p class="high"></p>
-                    </div>
-                    <div>
-                      <img src="pics/event-1.jpg" alt="" class="news-pics" />
-                    </div>
-                    <div class="cart-concern position-absolute">
-                      <div class="cart-button d-flex">
-                        <a href="#" class="btn btn-medium btn-black"
-                          >了解更多</a
-                        >
-                      </div>
-                    </div>
+                <div class="product-card">
+                  <div class="image-container">
+                    <img
+                      src="pics/event-4.jpg"
+                      alt="產品圖片"
+                      class="product-image"
+                    />
+                  </div>
+                  <div class="content-container">
+                    <h2 class="news-title">區塊鏈應用與<br />資訊管理研討會</h2>
+                    <p class="news-content">
+                      了解區塊鏈技術的最新應用案例，以及如何將其應用於資訊管理中，保護數據的完整性和安全性。
+                    </p>
+                    <a href="#" class="btn btn-dark">了解更多</a>
                   </div>
                 </div>
               </div>
-
               <!-- 第五個 -->
               <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div style="width: 315px; height: 418px">
-                    <div class="image-holder" style="height: 420">
-                      <h3 class="news-title">智慧城市與資訊安全論壇</h3>
-                      <p class="high"></p>
-                      <span class="news-content"
-                        >探討智慧城市發展背景下的資訊安全挑戰，並分享智慧城市建設中的最佳實踐和安全解決方案。</span
-                      >
-                      <p class="high"></p>
-                    </div>
-                    <div>
-                      <img src="pics/event-1.jpg" alt="" class="news-pics" />
-                    </div>
-                    <div class="cart-concern position-absolute">
-                      <div class="cart-button d-flex">
-                        <a href="#" class="btn btn-medium btn-black"
-                          >了解更多</a
-                        >
-                      </div>
-                    </div>
+                <div class="product-card">
+                  <div class="image-container">
+                    <img
+                      src="pics/event-5.jpg"
+                      alt="產品圖片"
+                      class="product-image"
+                    />
+                  </div>
+                  <div class="content-container">
+                    <h2 class="news-title">智慧城市與資訊安全論壇</h2>
+                    <p class="news-content">
+                      探討智慧城市發展背景下的資訊安全挑戰，並分享智慧城市建設中的最佳實踐和安全解決方案。
+                    </p>
+                    <a href="#" class="btn btn-dark">了解更多</a>
                   </div>
                 </div>
               </div>
@@ -769,55 +762,223 @@
       </div>
       <div class="swiper-pagination position-absolute text-center"></div>
     </section>
-
+    <!-- 學會&業界 -->
     <section id="company-services" class="padding-large">
       <div class="container">
         <div class="row">
+          <!-- 第一個輪播 -->
           <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box text-center">
-              <div class="icon-box-icon mb-3">
-                <svg class="cart-outline" width="64" height="64">
-                  <use xlink:href="#cart-outline" />
-                </svg>
+            <div
+              id="carouselExampleIndicators1"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <h2 class="section-title text-center mb-4">資訊管理學會</h2>
+                <!-- 新增的區塊標題 -->
+                <div class="carousel-item active">
+                  <div class="icon-box text-center">
+                    <div class="icon-box-icon mb-3">
+                      <svg class="cart-outline" width="64" height="64">
+                        <use xlink:href="#cart-outline" />
+                      </svg>
+                    </div>
+                    <div class="icon-box-content">
+                      <h3 class="card-title text-uppercase text-dark">
+                        資訊管理學會
+                      </h3>
+                      <p class="text-muted">
+                        Consectetur adipi elit lorem ipsum dolor sit amet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon-box text-center">
+                    <div class="icon-box-icon mb-3">
+                      <svg class="cart-outline" width="64" height="64">
+                        <use xlink:href="#cart-outline" />
+                      </svg>
+                    </div>
+                    <div class="icon-box-content">
+                      <h3 class="card-title text-uppercase text-dark">123</h3>
+                      <p class="text-muted">
+                        Consectetur adipi elit lorem ipsum dolor sit amet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 在此可增加更多輪播項目 -->
               </div>
-              <div class="icon-box-content">
-                <h3 class="card-title text-uppercase text-dark">
-                  資訊管理學會
-                </h3>
-                <p class="text-muted">
-                  Consectetur adipi elit lorem ipsum dolor sit amet.
-                </p>
-              </div>
+              <!-- 輪播控制元素 -->
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
+
+          <!-- 第二個輪播 -->
           <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box text-center">
-              <div class="icon-box-icon mb-3">
-                <svg class="price-tag" width="64" height="64">
-                  <use xlink:href="#price-tag" />
-                </svg>
+            <div
+              id="carouselExampleIndicators1"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <h2 class="section-title text-center mb-4">資訊管理學會</h2>
+                <!-- 新增的區塊標題 -->
+                <div class="carousel-item active">
+                  <div class="icon-box text-center">
+                    <div class="icon-box-icon mb-3">
+                      <svg class="cart-outline" width="64" height="64">
+                        <use xlink:href="#cart-outline" />
+                      </svg>
+                    </div>
+                    <div class="icon-box-content">
+                      <h3 class="card-title text-uppercase text-dark">
+                        資訊管理學會
+                      </h3>
+                      <p class="text-muted">
+                        Consectetur adipi elit lorem ipsum dolor sit amet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon-box text-center">
+                    <div class="icon-box-icon mb-3">
+                      <svg class="cart-outline" width="64" height="64">
+                        <use xlink:href="#cart-outline" />
+                      </svg>
+                    </div>
+                    <div class="icon-box-content">
+                      <h3 class="card-title text-uppercase text-dark">123</h3>
+                      <p class="text-muted">
+                        Consectetur adipi elit lorem ipsum dolor sit amet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 在此可增加更多輪播項目 -->
               </div>
-              <div class="icon-box-content">
-                <h3 class="card-title text-uppercase text-dark">學會</h3>
-                <p class="text-muted">
-                  Amet consectetur adipi elit loreme ipsum dolor sit.
-                </p>
-              </div>
+              <!-- 輪播控制元素 -->
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
+
+          <!-- 第三個輪播 -->
           <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box text-center">
-              <div class="icon-box-icon mb-3">
-                <svg class="shield-plus" width="64" height="64">
-                  <use xlink:href="#shield-plus" />
-                </svg>
+            <div
+              id="carouselExampleIndicators1"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <h2 class="section-title text-center mb-4">資訊管理學會</h2>
+                <!-- 新增的區塊標題 -->
+                <div class="carousel-item active">
+                  <div class="icon-box text-center">
+                    <div class="icon-box-icon mb-3">
+                      <svg class="cart-outline" width="64" height="64">
+                        <use xlink:href="#cart-outline" />
+                      </svg>
+                    </div>
+                    <div class="icon-box-content">
+                      <h3 class="card-title text-uppercase text-dark">
+                        資訊管理學會
+                      </h3>
+                      <p class="text-muted">
+                        Consectetur adipi elit lorem ipsum dolor sit amet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon-box text-center">
+                    <div class="icon-box-icon mb-3">
+                      <svg class="cart-outline" width="64" height="64">
+                        <use xlink:href="#cart-outline" />
+                      </svg>
+                    </div>
+                    <div class="icon-box-content">
+                      <h3 class="card-title text-uppercase text-dark">123</h3>
+                      <p class="text-muted">
+                        Consectetur adipi elit lorem ipsum dolor sit amet.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 在此可增加更多輪播項目 -->
               </div>
-              <div class="icon-box-content">
-                <h3 class="card-title text-uppercase text-dark">業界</h3>
-                <p class="text-muted">
-                  Rem Lopsum dolor sit amet, consectetur adipi elit.
-                </p>
-              </div>
+              <!-- 輪播控制元素 -->
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
         </div>
@@ -867,62 +1028,16 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
-  <style>
-    .news-title {
-      width: 315px;
-      height: 60px;
-    }
-    .news-content {
-      width: 315px;
-      height: 300px;
-    }
-    .news-pics {
-      width: 315px;
-      height: 200px;
-    }
-    .high {
-      height: 20px;
-    }
-    .pics {
-      width: 315px;
-      height: 200px;
-    }
-    .carousel-image {
-      position: relative;
-    }
 
-    .carousel-image::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(235, 235, 235, 0.7);
-      z-index: 1;
-    }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var aboutLink = document.getElementById("about-link");
+      var aboutDropdown = document.getElementById("about-dropdown");
 
-    .carousel-image img {
-      width: 100%;
-      height: 80%;
-      object-fit: cover;
-    }
-
-    .carousel-caption {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(42, 42, 42, 0.8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .banner-content {
-      text-align: center;
-    }
-  </style>
+      aboutLink.addEventListener("click", function (event) {
+        event.preventDefault(); // 阻止預設動作（如導航）
+        aboutDropdown.style.display = "block";
+      });
+    });
+  </script>
 </html>

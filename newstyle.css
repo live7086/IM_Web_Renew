@@ -1,4 +1,132 @@
-.news{
-    width: 310;
-    height: 418;
+.fixed-button {
+  position: fixed;
+  bottom: -40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 下拉列表的樣式 */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* 滑鼠移動到關於學會時展開下拉列表 */
+.nav-item:hover #about-dropdown {
+  display: block;
+}
+
+.news-pics {
+  width: 100%; /* 讓圖片寬度自適應父元素 */
+  height: auto; /* 讓圖片高度自適應父元素 */
+}
+
+.high {
+  height: 20px;
+}
+
+.carousel-image {
+  position: relative;
+}
+
+.carousel-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(235, 235, 235, 0.7);
+  z-index: 1;
+}
+
+.carousel-image img {
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(42, 42, 42, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-content {
+  text-align: center;
+}
+
+.product-card {
+  border-radius: 10px;
+  border: 1px solid black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.news-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 36px;
+}
+
+.news-content {
+  margin-bottom: 20px;
+  text-align: left;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #72aec8;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.icon-box-content {
+  opacity: 0; /* 初始透明度為0，讓文字隱藏 */
+  transition: opacity 0.3s ease; /* 使用opacity屬性來實現動畫效果 */
+}
+
+.icon-box:hover .icon-box-content {
+  opacity: 1; /* 滑鼠懸停時，將透明度設置為1，讓文字顯示 */
 }
