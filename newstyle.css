@@ -1,3 +1,8 @@
+/* about-rule */
+.toggle-content {
+  display: none;
+}
+
 .holder {
   height: 75px;
 }

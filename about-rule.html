@@ -1,0 +1,344 @@
+<!-- 組織章程 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .container {
+        width: 80%;
+        text-align: center;
+      }
+
+      .chapter-list {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .chapter-item {
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .chapter-item:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        animation: underline 0.3s ease-in-out;
+      }
+
+      .chapter-item.active {
+        font-weight: bold;
+      }
+
+      .chapter-content {
+        display: none;
+        animation: fadeIn 0.5s;
+      }
+
+      .chapter-content.active {
+        display: block;
+      }
+
+      @keyframes underline {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+    <title>資訊管理學會</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content />
+    <meta name="keywords" content />
+    <meta name="description" content />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="newstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- script
+        ================================================== -->
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body>
+    <!-- 導引列 -->
+    <div id="header-placeholder"></div>
+    <!-- 暫時處理懸浮問題 -->
+    <div class="holder"></div>
+
+    <div class="container">
+      <div class="chapter-list">
+        <div
+          class="chapter-item active"
+          onclick="selectChapter(this, 'chapter1')"
+        >
+          第一章
+        </div>
+        <div class="chapter-item" onclick="selectChapter(this, 'chapter2')">
+          第二章
+        </div>
+        <div class="chapter-item" onclick="selectChapter(this, 'chapter3')">
+          第三章
+        </div>
+        <div class="chapter-item" onclick="selectChapter(this, 'chapter4')">
+          第四章
+        </div>
+        <div class="chapter-item" onclick="selectChapter(this, 'chapter5')">
+          第五章
+        </div>
+        <div class="chapter-item" onclick="selectChapter(this, 'chapter6')">
+          第六章
+        </div>
+      </div>
+
+      <div id="chapter1" class="chapter-content active">
+        <div class="news-content">
+          <h2>第一章 總則</h2>
+          <ul>
+            <li>第一條、本會訂名為「中華民國資訊管理學會」(以下簡稱本會)。</li>
+            <li>
+              第二條、本會為依據人民團體法設立之社會團體非以營利為目的。本會之宗旨為促進資訊管理學術之研究發展，推廣資訊管理學術之實務應用，整合資訊管理學術之理論與實務，與提昇資訊管理學術之教育水準。
+            </li>
+            <li>第三條、本會以全國行政區域為組織區域。</li>
+            <li>
+              第四條、本會之會址設於主管機關所在地區並得報經主管機關核准設辦事處。
+            </li>
+            <li>第五條、本會之任務如下：</li>
+            <ul>
+              <li>從事資訊管理學術及實務之整合研究;</li>
+              <li>舉辦及參加國內外資訊管理之相關學術會議及活動;</li>
+              <li>建議資訊管理之課程架構;</li>
+              <li>辦理資訊管理進修教育;</li>
+              <li>發行期刊及著譯叢書;</li>
+              <li>接受政府及民間之委託辦理與資訊管理之相關研究諮詢與服務;</li>
+              <li>符合本會宗旨之其他事項。</li>
+            </ul>
+            <li>
+              第六條、本會之主管機關為內政部。目的事業主管機關為教育部，其目的事業應受各該事業主管機關之指導及監督。
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="chapter2" class="chapter-content">
+        <div class="news-content">
+          <h2>第二章 會員</h2>
+          <ul>
+            <li>第七條、本會會員如下：</li>
+            <ul>
+              <li>一、個人會員</li>
+              <ul>
+                <li>
+                  1、一般會員，凡年滿二十歲認同本會宗旨者均可申請入會，經理事會審查通過者得為一般會員。
+                </li>
+                <li>
+                  ２、正會員，凡合乎下列條件之一經正會員一人之推薦，並經審查合格由本會理事會通過後得為本會正會員。
+                </li>
+                <ul>
+                  <li>
+                    (1)國內各大專院校講師(含以上或在研究發展機構任相當職務者)。
+                  </li>
+                  <li>
+                    (2)國內外資訊管理或相關研究所畢業或研究所修
+                    *年以上並有論文公開發表者。
+                  </li>
+                  <li>
+                    (3)政府或公民營企業擔任資訊管理或其他主管職務 *年以上者。
+                  </li>
+                  <li>(4)為本會一般會員三年以上並有傑出表現者。</li>
+                </ul>
+                <li>
+                  二、學生會員：各大專院校在校學生，經理事會審查通過得加入本會為學生會員。
+                </li>
+                <li>
+                  三、團體會員：凡國內外工商企業或學術機構，經正會員一人以上之推薦並經本會理事會通過後得為團體會員，並得推派代表一人享有正會員權利。
+                </li>
+                <li>
+                  四、贊助會員：捐助本會之個人或團體，並經本會理事會通過後得為本會贊助會員。
+                </li>
+                <li>五、榮譽會員：由理事會推薦頒贈。</li>
+              </ul>
+            </ul>
+            <li>第八條、會員有遵守本會章程決議及繳納會費之義務。</li>
+            <li>
+              第九條、會員有違反法令章程、連續兩年未繳會費、或不遵守會員(會員代表)大會決議者，得經理事會決議予以警告或停權處分。其危害團體情節重大者，得經會員大會決議予以除名。會員有下列情事之一者為出會：1.死亡。2.喪失會員資格。3.經會員大會決議除名者。
+            </li>
+            <li>第十條、會員得以書面並敘明理由向本會聲明退會。</li>
+            <li>第十一條、會員經除名或退會以繳納之各項費用不予退還。</li>
+            <li>
+              第十二條、正會員及團體會員所派代表，有表決權、選舉權、被選舉權與罷免權。其他會員僅有列席會員(會員代表)大會之權利，每一正會員為一權。
+            </li>
+            <li>第十三條、會員之入會程序及會籍變更相關辦法另訂之。</li>
+          </ul>
+        </div>
+      </div>
+      <div id="chapter3" class="chapter-content">
+        <div class="news-content">
+          <h2>第三章 組織及職權</h2>
+          <ul>
+            <li>
+              第十四條、本會以會員(會員代表)大會為最高權力機構，會員(會員代表)大會閉會期間，由理事會代行職權。監事會為監察機構。本會個人會員人數超過三百人以上時得按分區比例選出會員代表，再召開會員代表大會，行使會員大會職權。本會會員代表，依本會個人會員人數比例選出，任期二年，連選得連任。會員代表選舉辦法另訂之。
+            </li>
+            <li>第十五條、會員(會員代表)大會之職權如下：</li>
+            <ul>
+              <li>訂定與變更章程。</li>
+              <li>選舉或罷免理事監事。</li>
+              <li>議決入會費、常年會費、事業費及會員捐款之數額及方式。</li>
+              <li>議決年度工作計劃報告及預算決算。</li>
+              <li>議決會員(會員代表)之除名處分。</li>
+              <li>議決財產之處分。</li>
+              <li>議決團體之解散。</li>
+              <li>與會員之權利義務有關之其他重大事項之議決。</li>
+            </ul>
+            <li>
+              第十六條、本會置理事二十一人、監事七人，由會員(會員代表)選舉之，分別成立理事會與監事會。選舉前項理事監事時，同時選出候補理事七人，候補監事二人。理事、監事得採用通訊選舉，但不得連續辦理。通訊選舉辦法由理事會通過，報請主管機關核備後行之。
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="chapter4" class="chapter-content">
+        <div class="news-content">
+          <h2>第四章 會議</h2>
+          <p>
+            第二十八條、會員(會員代表)大會分定期會議與臨時會議兩種，由理事長召集，召集時除緊急事故之臨時會議外應於十五日前以書面通知之。定期會議每年召開一次，臨時會議於理事會認為必要，或經會員（會員代表）十分之一以上之請求，或監事會函請召集時召開之。
+          </p>
+
+          <p>
+            第二十九條、會員(會員代表)不能親自出席會員(會員代表)大會時，得以書面委託其他會員(會員代表)代理，每一會員(會員代表)以代理一人為限。
+          </p>
+
+          <p>
+            第三十條、會員(會員代表)大會之決議，以會員(會員代表)過半數之出席，出席人數過半數或較多數之同意行之，但章程之訂定與變更以出席人數四分之三以上之同意或全體會員三分之二以上書面之同意行之。本會之解散，得隨時以全體會員三分之二以上之可決解散之。下列事項之決議以出席人數三分之二以上同意行之：
+          </p>
+          <ol>
+            <li>會員(會員代表)之除名;</li>
+            <li>理事監事之罷免;</li>
+            <li>財產之處分;</li>
+            <li>其他與會員權利義務有關之重大事項。</li>
+          </ol>
+
+          <p>
+            第三十一條、理事會每三個月召開一次，監事會每六個月召開一次，必要時得召開聯席會議或臨時會議。前項會議召集時，除臨時會議外，應於七日前以書面通知。會議之決議各以理事監事過半數之出席，出席人數過半數或較多數之同意行之。
+          </p>
+
+          <p>
+            第三十二條、理事監事應出席理事監事會議，理事會監事會不得委託出席。理事監事連續兩次無故缺席理事會監事會者，視同辭職。
+          </p>
+        </div>
+      </div>
+      <div id="chapter5" class="chapter-content">
+        <div class="news-content">
+          <h2>第五章 經費及會計</h2>
+          <ul>
+            <li>
+              第三十三條、會經費來源如下：
+              <ol type="1">
+                <li>
+                  入會費：各類會員(除名譽會員外)入會時應一次繳納，入會費(以新台幣計)如下：學生會員壹百元其他會員伍百元。
+                </li>
+                <li>
+                  常年會費：會員(除榮譽會員外)需繳交年費，每年新台幣年費如下：學生貳百元、個人會員捌百元、團體會員伍仟元。個人會員一次繳交捌仟元者，團體會員一次繳交伍萬元者，得永久免繳常年會費。
+                </li>
+                <li>事業費。</li>
+                <li>會員捐款。</li>
+                <li>委託收益。</li>
+                <li>基金及其孳息。</li>
+                <li>其他收入。</li>
+              </ol>
+            </li>
+            <li>
+              第三十四條、本會會計年度自每年一月一日起至十二月三十一日止。
+            </li>
+            <li>
+              第三十五條、本會每年編造預(決)算報告於每年終了之前(後)兩個月內經理事會審查，提會員(會員代表)大會通過，並報主管機關核備。會員(會員代表)大會因故未能及時召開時，應經理監事通過先報主管機關，事後提報大會追認。但決算報告應先送監事會審核，並將審核結果一併提報會員(會員代表)大會。
+            </li>
+            <li>
+              第三十六條、本會於解散後，剩餘財產歸屬所在地之地方自治團體或主管機關指定之機關團體所有。
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="chapter6" class="chapter-content">
+        <div class="news-content">
+          <h2>第六章 附則</h2>
+          <ul>
+            <li>第三十七條、本章程未規定事項悉依有關法令規定辦理。</li>
+            <li>
+              第三十八條、本會辦事細則及各種委員會組織章程由理事會訂定之。
+            </li>
+            <li>
+              第三十九條、本章程經會員(會員代表)大會通過報經主管機關核備後實行變更時亦同。
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function selectChapter(element, chapterId) {
+        var chapterItems = document.getElementsByClassName("chapter-item");
+        for (var i = 0; i < chapterItems.length; i++) {
+          chapterItems[i].classList.remove("active");
+        }
+        element.classList.add("active");
+
+        var chapterContents =
+          document.getElementsByClassName("chapter-content");
+        for (var i = 0; i < chapterContents.length; i++) {
+          chapterContents[i].classList.remove("active");
+        }
+        document.getElementById(chapterId).classList.add("active");
+      }
+    </script>
+
+    <!-- 底部聯絡資訊等 -->
+    <div id="footer"></div>
+
+    <script>
+      // 使用 fetch 函數加載header的內容
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      // 使用 fetch 函數加載footer的內容
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+    </script>
+  </body>
+</html>
