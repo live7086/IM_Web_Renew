@@ -1,3 +1,18 @@
+.holder {
+  height: 75px;
+}
+.navbar-self {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  z-index: 100;
+}
+
 .fixed-button {
   position: fixed;
   bottom: -40%;
@@ -141,4 +156,239 @@
 .icon-box-change-image:hover .icon-box-image {
   opacity: 0.5; /* 初始透明度為0，讓文字隱藏 */
   transition: opacity 0.3s ease; /* 使用opacity屬性來實現動畫效果 */
+}
+
+.footer {
+  position: relative; /* 使用相對定位 */
+  bottom: 0; /* 使 footer 固定在視口底部 */
+  width: 100%; /* 使 footer 佔滿整個視口寬度 */
+  background-color: #333; /* 設置背景顏色 */
+  color: #fff; /* 設置文字顏色 */
+  padding: 20px; /* 設置 padding 以增加空白區域 */
+  text-align: center; /* 將文字置中 */
+}
+
+.row {
+  display: flex;
+}
+
+/* about.html */
+.president-carousel-container {
+  position: sticky;
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.president-carousel {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.president-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c7a4a4;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.president-card.current {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.president-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.president-nav button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.president-nav button:hover {
+  color: #666;
+}
+
+.president-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
+/* 表格 */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+table {
+  width: 80%;
+  max-width: 800px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.container-table {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.selector-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#table-selector {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#table-selector option {
+  padding: 8px 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: rgb(114, 174, 200);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 選擇器容器 */
+.selector-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* 選擇器本身 */
+#table-selector {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* 選擇器選項 */
+#table-selector option {
+  padding: 8px 12px;
+}
+
+#intro {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+
+.intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-item {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro-item-content {
+  text-align: left;
+  font-size: 16px;
+}
+
+.intro-item h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.intro-item h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.intro-item h2:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.intro-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.intro-item li {
+  margin-bottom: 10px;
+  color: #666;
 }

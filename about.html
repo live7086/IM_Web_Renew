@@ -2,9 +2,325 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>資訊管理學會</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="newstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- script ================================================== -->
+    <script src="js/modernizr.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- 導引列 -->
+    <div id="header-placeholder"></div>
+    <!-- 暫時處理懸浮問題 -->
+    <div class="holder"></div>
+
+    <!-- 介紹區域 -->
+    <!-- 介紹區域 -->
+    <section id="intro">
+      <div class="intro-container">
+        <div class="intro-item">
+          <h2>簡介</h2>
+          <ul class="intro-item-content">
+            <li>
+              ．中華民國資訊管理學會成立於民國
+              79年，係集合群國大專院校資訊管理學門之學者專家與部分資訊業界之精英組合而成。
+            </li>
+            <li>．為內政部登記的學術研究性社團法人。</li>
+            <li>
+              ．學會主要成員是全國所有資訊管理系教授。全國大專院校中，計有119所資訊管理系所。
+            </li>
+            <li>．全國大專院校資訊管理學系每年約有 2萬多名畢業生。</li>
+          </ul>
+        </div>
+        <div class="intro-item">
+          <h2>宗旨</h2>
+          <ul class="intro-item-content">
+            <li>
+              ．本會之宗旨為促進資訊管理學術之研究發展，推廣資訊管理學術之實務應用，整合資訊管理學術之理論及實務，與提昇資訊管理學域之教育水準。
+            </li>
+          </ul>
+        </div>
+        <div class="intro-item">
+          <h2>願景</h2>
+          <ul class="intro-item-content">
+            <li>．使資管學會成為最具活力及影響力的學術團體。</li>
+            <li>
+              ．強化資訊管理學域之可視度，提升資管人才的學術，專技與產學互動達到最優良的品質。
+            </li>
+          </ul>
+        </div>
+        <div class="intro-item">
+          <h2>任務</h2>
+          <ul class="intro-item-content">
+            <li>．從事資訊管理學術及實務之整合研究；</li>
+            <li>．舉辦及參加國內外資訊管理之相關學術會議及活動；</li>
+            <li>．建議資訊管理之課程架構；</li>
+            <li>．辦理資訊管理進修教育；</li>
+            <li>．發行期刊及著譯叢書；</li>
+            <li>
+              ．接受政府及民間之委託，辦理與資訊管理之相關研究、諮詢與服務；
+            </li>
+            <li>．符合本會宗旨之其他事項。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="row">
+      <!-- 理事長 -->
+      <!-- need：需要新增理事長名稱上去 -->
+      <div class="col">
+        <div class="intro-item">
+          <h2 style="font-size: 42px">歷任理事長</h2>
+        </div>
+        <div class="president-carousel-container">
+          <div class="president-carousel">
+            <div class="president-card">
+              <img src="../pics/president-1.jpg" class="president-img" alt="" />
+              <!-- 上一任總統資訊 -->
+            </div>
+            <div class="president-card current">
+              <img src="../pics/president-2.jpg" class="president-img" alt="" />
+              <div class="president-name">現任理事長姓名</div>
+              <!-- 現任總統資訊 -->
+            </div>
+            <div class="president-card">
+              <img src="../pics/president-3.jpg" class="president-img" alt="" />
+              <div class="president-name">下一任理事長姓名</div>
+              <!-- 下一任總統資訊 -->
+            </div>
+            <div class="president-nav">
+              <button class="prev-btn">&laquo;</button>
+              <button class="next-btn">&raquo;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 活動 -->
+      <!-- 選擇框 -->
+      <div class="col">
+        <div class="intro-item">
+          <h2 style="font-size: 42px">活動記事</h2>
+        </div>
+        <div class="container-table">
+          <!-- 選擇器容器 -->
+          <div class="selector-container">
+            <select id="table-selector">
+              <option value="national-conference">
+                國際資訊管理學術研討會暨資管學會年會
+              </option>
+              <option value="research-conference">
+                國際資訊管理研究暨實務研討會
+              </option>
+              <option value="competition">全國大專院校資訊管理專題競賽</option>
+              <option value="phd-seminar">全國資管博士生學術交流研討會</option>
+              <option value="cross-strait">
+                海峽兩岸資訊管理發展與策略學術研討會
+              </option>
+            </select>
+          </div>
+
+          <!-- 表格容器 -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>屆次</th>
+                  <th>承辦學校/時間/地點</th>
+                  <th>主辦單位/年度</th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+            <button id="load-more-btn">載入更多</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 學會&業界 -->
+    <!-- 底部聯絡資訊等 -->
+    <div id="footer"></div>
+
+    <!-- 表格加載動畫 -->
+    <script>
+      const tableData = {
+        "national-conference": [
+          { session: "一", school: "中山大學", year: 79 },
+          { session: "二", school: "輔仁大學", year: 80 },
+          { session: "三", school: "交通大學", year: 81 },
+          { session: "四", school: "銘傳大學", year: 82 },
+          { session: "五", school: "淡江大學", year: 83 },
+        ],
+        "research-conference": [
+          { session: "一", school: "中央大學", year: 83 },
+          { session: "二", school: "大葉大學", year: 84 },
+          { session: "三", school: "中正大學", year: 86 },
+          { session: "四", school: "輔仁大學", year: 87 },
+          { session: "五", school: "世新大學", year: 88 },
+        ],
+        competition: [
+          { session: "一", school: "輔仁大學", year: 85 },
+          { session: "二", school: "高雄第一科大", year: 86 },
+          { session: "三", school: "長榮大學", year: 87 },
+          { session: "四", school: "南台科大", year: 88 },
+          { session: "五", school: "雲林科大", year: 89 },
+        ],
+        "phd-seminar": [
+          { session: "一", school: "中山大學", year: 88 },
+          { session: "二", school: "中正大學", year: 89 },
+          { session: "三", school: "中央大學", year: 90 },
+          { session: "四", school: "政治大學", year: 91 },
+          { session: "五", school: "台灣大學", year: 92 },
+        ],
+        "cross-strait": [
+          { session: "一", school: "中山大學", year: 88 },
+          { session: "二", school: "中正大學", year: 89 },
+          { session: "三", school: "中央大學", year: 90 },
+          { session: "四", school: "政治大學", year: 91 },
+          { session: "五", school: "台灣大學", year: 92 },
+        ],
+      };
+
+      const tableSelector = document.getElementById("table-selector");
+      const tableBody = document.getElementById("table-body");
+      const loadMoreBtn = document.getElementById("load-more-btn");
+
+      let currenTableDataIndex = 0;
+      const itemsPerPage = 3;
+
+      // 初始化表格
+      renderTable(tableData["national-conference"]);
+
+      // 監聽選擇框變化事件
+      tableSelector.addEventListener("change", (event) => {
+        const selectedTable = event.target.value;
+        currenTableDataIndex = 0;
+        renderTable(tableData[selectedTable]);
+      });
+
+      // 監聽載入更多按鈕點擊事件
+      loadMoreBtn.addEventListener("click", () => {
+        const selectedTable = tableSelector.value;
+        renderTable(tableData[selectedTable]);
+      });
+
+      // 渲染表格
+      function renderTable(data) {
+        let html = "";
+        const endIndex = currenTableDataIndex + itemsPerPage;
+
+        for (
+          let i = currenTableDataIndex;
+          i < endIndex && i < data.length;
+          i++
+        ) {
+          const row = data[i];
+          html += `
+                              <tr>
+                                <td>${row.session}</td>
+                                <td>${
+                                  row.school || row.location || row.time
+                                }</td>
+                                <td>${row.year || row.host}</td>
+                              </tr>
+                            `;
+        }
+
+        tableBody.innerHTML += html;
+        currenTableDataIndex = endIndex;
+
+        if (currenTableDataIndex >= data.length) {
+          loadMoreBtn.disabled = true;
+          loadMoreBtn.textContent = "已無更多資料";
+        }
+      }
+    </script>
+
+    <!-- president 切換動畫 -->
+    <script>
+      const presidentCards = document.querySelectorAll(".president-card");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+
+      let currentIndex = 1; // 假設初始為第二任總統
+
+      function showPresident(index) {
+        presidentCards.forEach((card, i) => {
+          if (i === index) {
+            card.classList.add("current");
+          } else {
+            card.classList.remove("current");
+          }
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex =
+          currentIndex === 0 ? presidentCards.length - 1 : currentIndex - 1;
+        showPresident(currentIndex);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex =
+          currentIndex === presidentCards.length - 1 ? 0 : currentIndex + 1;
+        showPresident(currentIndex);
+      });
+
+      showPresident(currentIndex); // 初始顯示第二任總統
+    </script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- header footer加載函式 -->
+    <script>
+      // 使用 fetch 函數加載header的內容
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      // 使用 fetch 函數加載footer的內容
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      document.addEventListener("DOMContentLoaded", function () {
+        var aboutLink = document.getElementById("about-link");
+        var aboutDropdown = document.getElementById("about-dropdown");
+
+        aboutLink.addEventListener("click", function (event) {
+          event.preventDefault(); // 阻止預設動作（如導航）
+          aboutDropdown.style.display = "block";
+        });
+      });
+    </script>
+  </body>
 </html>
