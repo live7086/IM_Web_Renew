@@ -1,58 +1,370 @@
-<!-- 活動花絮 -->
-<head>
-  <title>資訊管理學會</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="author" content />
-  <meta name="keywords" content />
-  <meta name="description" content />
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="stylesheet" type="text/css" href="newstyle.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- script
-      ================================================== -->
-  <script src="js/modernizr.js"></script>
-</head>
-<body>
-  <!-- 導引列 -->
-  <div id="header-placeholder"></div>
-  <!-- 底部聯絡資訊等 -->
-  <div id="footer"></div>
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="js/plugins.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
-  <script>
-    // 使用 fetch 函數加載header的內容
-    fetch("navbar.html")
-      .then((response) => response.text())
-      .then((data) => {
-        // 將標頭部分的內容插入到指定的元素中
-        document.getElementById("header-placeholder").innerHTML = data;
-      })
-      .catch((error) => console.error("Error:", error));
-    // 使用 fetch 函數加載footer的內容
-    fetch("footer.html")
-      .then((response) => response.text())
-      .then((data) => {
-        // 將標頭部分的內容插入到指定的元素中
-        document.getElementById("footer").innerHTML = data;
-      })
-      .catch((error) => console.error("Error:", error));
-  </script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>資訊管理學會</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content />
+    <meta name="keywords" content />
+    <meta name="description" content />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="newstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <style>
+      /* styles.css */
+
+      /* 全局樣式 */
+      .event-content {
+        color: black;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 頁首樣式 */
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 36px;
+      }
+
+      /* Swiper樣式 */
+      .swiper-container {
+        width: 100%;
+        height: 600px;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-slide {
+        position: relative;
+      }
+
+      .swiper-slide .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .swiper-slide:hover .overlay {
+        opacity: 1;
+      }
+
+      /* 網格相冊樣式 */
+      .grid-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+      }
+
+      .grid-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      /* 視差部分樣式 */
+      .parallax-section {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .parallax-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150%;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      .parallax-content {
+        position: relative;
+        z-index: 1;
+        padding: 100px;
+        color: #fff;
+        text-align: center;
+      }
+
+      /* 時間軸樣式 */
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: #333;
+        margin-left: -1px;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+      }
+
+      .timeline-content {
+        position: relative;
+        width: 45%;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        left: 0;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        left: 55%;
+      }
+
+      .grid-item {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .grid-item:hover .overlay {
+        opacity: 1;
+      }
+
+      .overlay h3 {
+        font-size: 24px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 導引列 -->
+    <div id="header-placeholder"></div>
+    <!-- 暫時處理懸浮問題 -->
+    <div class="holder"></div>
+
+    <section class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="pics/event-3.jpg" alt="活動圖片1" />
+          <div class="overlay">
+            <h3>第22屆海峽兩岸資訊管理發展與策略學術研討會</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="pics/event-4.jpg" alt="活動圖片2" />
+          <div class="overlay">
+            <h3>第27屆國際資訊管理學術研討會</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="pics/event-5.jpg" alt="活動圖片2" />
+          <div class="overlay">
+            <h3>2016資管學會理監事會議及會員代表大會</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="pics/event-6.jpg" alt="活動圖片2" />
+          <div class="overlay">
+            <h3>大專院校資訊管理系所主管聯席會議（北區）</h3>
+          </div>
+        </div>
+        <!-- 添加更多的 swiper-slide 元素 -->
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </section>
+
+    <section class="grid-gallery">
+      <div class="grid-item">
+        <img src="pics/event-1.jpg" alt="活動圖片3" />
+        <div class="overlay">
+          <h3>金融研訓雲端研討會</h3>
+        </div>
+      </div>
+      <div class="grid-item">
+        <img src="pics/event-2.jpg" alt="活動圖片4" />
+        <div class="overlay">
+          <h3>資訊管理趨勢討論</h3>
+        </div>
+      </div>
+      <!-- 添加更多的 grid-item 元素 -->
+    </section>
+
+    <section class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>活動開始</h3>
+          <p class="event-content">
+            本次(第22屆)海峽兩岸資訊管理發展與策略學術研討會於2016/7/29 ~
+            7/31舉辦於臺灣，由國立臺北科技大學資訊與財金管理系承辦，本次會議承襲往年的精神，廣邀臺海兩岸四地的學者們出席共襄盛舉，交流資訊科技領域的研究與實務經驗。
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>精彩瞬間</h3>
+          <p class="event-content">
+            少子化的台灣趨勢，產業面臨衝擊！ 活動日程： 2016 年 03 月 18 日 (五)
+            13:30 ~ 15:30 活動地點：銘傳大學基河校區 (臺北市基河路130號3樓)
+            主辦單位：社團法人中華民國管理科學學會
+            合辦單位：國立政治大學商學院、銘傳大學管理學院
+            協辦單位：臺灣組織與管理學會、中華民國資訊管理學會 贊助單位：科技部
+          </p>
+        </div>
+      </div>
+      <!-- 添加更多的 timeline-item 元素 -->
+    </section>
+    <!-- 學會&業界 -->
+    <!-- 底部聯絡資訊等 -->
+    <div id="footer"></div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- header footer加載函式 -->
+    <script>
+      // 使用 fetch 函數加載header的內容
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      // 使用 fetch 函數加載footer的內容
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      document.addEventListener("DOMContentLoaded", function () {
+        var aboutLink = document.getElementById("about-link");
+        var aboutDropdown = document.getElementById("about-dropdown");
+
+        aboutLink.addEventListener("click", function (event) {
+          event.preventDefault(); // 阻止預設動作（如導航）
+          aboutDropdown.style.display = "block";
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // script.js
+
+      // 初始化Swiper
+      var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        effect: "cube",
+        cubeEffect: {
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        },
+      });
+
+      // 初始化動畫庫
+      anime({
+        targets: ".grid-item",
+        scale: [0, 1],
+        opacity: [0, 1],
+        delay: anime.stagger(100),
+        easing: "easeOutQuart",
+      });
+
+      // 初始化視差效果
+      var parallaxInstance = new Parallax(
+        document.querySelector(".parallax-bg")
+      );
+
+      // 時間軸動畫
+      var timelineItems = document.querySelectorAll(".timeline-item");
+
+      timelineItems.forEach(function (item, index) {
+        anime({
+          targets: item,
+          opacity: [0, 1],
+          translateY: [50, 0],
+          delay: 300 + index * 200,
+          easing: "easeOutQuart",
+        });
+      });
+    </script>
+  </body>
 </html>

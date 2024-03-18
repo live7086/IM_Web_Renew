@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>學會組織</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="author" content />
-    <meta name="keywords" content />
-    <meta name="description" content />
-    <title>資訊管理學會</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="newstyle.css" />
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet" />
-    <!-- script ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <style>
+    <head>
+        <title>學會組織</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="author" content />
+        <meta name="keywords" content />
+        <meta name="description" content />
+        <title>資訊管理學會</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="newstyle.css" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
+            rel="stylesheet" />
+        <!-- script ================================================== -->
+        <script src="js/modernizr.js"></script>
+        <style>
       .table-container {
         margin-top: 60px;
         padding: 40px;
@@ -92,6 +92,39 @@
         text-overflow: ellipsis;
       }
   
+      .search-container {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+  
+      .search-container input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+  
+      .search-container button {
+        padding: 10px 20px;
+        background-color: rgb(114, 174, 200);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      .sort-container {
+        margin-bottom: 20px;
+        text-align: right;
+      }
+  
+      .sort-container select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
       @keyframes zoomIn {
         0% {
           opacity: 0;
@@ -114,46 +147,60 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <!-- 導引列 -->
-    <div id="header-placeholder"></div>
-    <!-- 暫時處理懸浮問題 -->
-    <div class="holder"></div>
-    <div class="container">
-      <div class="table-container">
-        <h2>各校資管系所</h2>
-        <table class="schools-table">
-          <thead>
-            <tr class="bigger">
-              <th>學校名稱</th>
-              <th>系主任</th>
-              <th>系所名稱</th>
-              <th>系所網址</th>
-              <th>電話</th>
-              <th>簡介</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- 使用JavaScript動態生成表格內容,限制每頁10筆資料 -->
-          </tbody>
-        </table>
-        <div class="pagination">
-          <!-- 使用JavaScript動態生成分頁按鈕 -->
+    </head>
+    <body>
+        <!-- 導引列 -->
+        <div id="header-placeholder"></div>
+        <!-- 暫時處理懸浮問題 -->
+        <div class="holder"></div>
+        <div class="container">
+            <div class="table-container">
+                <h2>研討會論文集</h2>
+                <div class="search-container">
+                    <input type="text" id="searchInput"
+                        placeholder="搜尋學校名稱..." />
+                    <button id="searchButton">搜尋</button>
+                </div>
+                <div class="sort-container">
+                    <select id="sortSelect">
+                        <option value>排序方式</option>
+                        <option value="schoolName">依學校名稱排序</option>
+                        <option value="director">依系主任排序</option>
+                        <option value="department">依系所名稱排序</option>
+                    </select>
+                </div>
+                <table class="schools-table">
+                    <thead>
+                        <tr class="bigger">
+                            <th>學校名稱</th>
+                            <th>系主任</th>
+                            <th>系所名稱</th>
+                            <th>系所網址</th>
+                            <th>電話</th>
+                            <th>簡介</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 使用JavaScript動態生成表格內容,限制每頁10筆資料 -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <!-- 使用JavaScript動態生成分頁按鈕 -->
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- 學會&業界 -->
-    <!-- 底部聯絡資訊等 -->
-    <div id="footer"></div>
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js/plugins.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <!-- header footer加載函式 -->
-    <script>
+        <!-- 學會&業界 -->
+        <!-- 底部聯絡資訊等 -->
+        <div id="footer"></div>
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script type="text/javascript"
+            src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <!-- header footer加載函式 -->
+        <script>
         // 使用 fetch 函數加載header的內容
         fetch("navbar.html")
             .then((response) => response.text())
@@ -180,10 +227,10 @@
             });
         });
     </script>
-    <!-- 表格載入資料 -->
-    <script>
-      // 模擬從後端獲取的資料
-      const data = [
+        <!-- 表格載入資料 -->
+        <script>
+            // 模擬從後端獲取的資料
+            const data = [
   {
     schoolName: '樹人醫護管理專校',
     director: '楊媚靜',
@@ -346,49 +393,75 @@
   }
 ];
 
-
-const tableBody = document.querySelector('.schools-table tbody');
-const paginationContainer = document.querySelector('.pagination');
-const rowsPerPage = 10;
-let currentPage = 1;
-
-function displayTable() {
-  const startIndex = (currentPage - 1) * rowsPerPage;
-  const endIndex = startIndex + rowsPerPage;
-  const rows = data.slice(startIndex, endIndex);
-
-  tableBody.innerHTML = rows.map(row => `
-    <tr>
-      <td>${row.schoolName}</td>
-      <td>${row.director}</td>
-      <td>${row.department}</td>
-      <td><a href="${row.website}" target="_blank" class="link">${row.website}</a></td>
-      <td>${row.phone}</td>
-      <td><a href="#">檢視</a></td>
-    </tr>
-  `).join('');
-}
-
-function displayPagination() {
-  const totalPages = Math.ceil(data.length / rowsPerPage);
-
-  paginationContainer.innerHTML = '';
-
-  for (let i = 1; i <= totalPages; i++) {
-    const button = document.createElement('button');
-    button.textContent = i;
-    button.classList.toggle('active', i === currentPage);
-    button.addEventListener('click', () => {
-      currentPage = i;
-      displayTable();
-      displayPagination();
-    });
-    paginationContainer.appendChild(button);
-  }
-}
-
-displayTable();
-displayPagination();
-    </script>
-  </body>
+            const tableBody = document.querySelector('.schools-table tbody');
+            const paginationContainer = document.querySelector('.pagination');
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const sortSelect = document.getElementById('sortSelect');
+            const rowsPerPage = 10;
+            let currentPage = 1;
+            let filteredData = data;
+      
+            function displayTable() {
+              const startIndex = (currentPage - 1) * rowsPerPage;
+              const endIndex = startIndex + rowsPerPage;
+              const rows = filteredData.slice(startIndex, endIndex);
+      
+              tableBody.innerHTML = rows.map(row => `
+                <tr>
+                  <td>${row.schoolName}</td>
+                  <td>${row.director}</td>
+                  <td>${row.department}</td>
+                  <td><a href="${row.website}" target="_blank" class="link">${row.website}</a></td>
+                  <td>${row.phone}</td>
+                  <td><a href="#">檢視</a></td>
+                </tr>
+              `).join('');
+            }
+      
+            function displayPagination() {
+              const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+      
+              paginationContainer.innerHTML = '';
+      
+              for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.classList.toggle('active', i === currentPage);
+                button.addEventListener('click', () => {
+                  currentPage = i;
+                  displayTable();
+                  displayPagination();
+                });
+                paginationContainer.appendChild(button);
+              }
+            }
+      
+            function searchSchools() {
+              const searchTerm = searchInput.value.toLowerCase();
+              filteredData = data.filter(row => row.schoolName.toLowerCase().includes(searchTerm));
+              currentPage = 1;
+              displayTable();
+              displayPagination();
+            }
+      
+            function sortSchools() {
+              const sortBy = sortSelect.value;
+              if (sortBy) {
+                filteredData.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
+              } else {
+                filteredData = data;
+              }
+              currentPage = 1;
+              displayTable();
+              displayPagination();
+            }
+      
+            searchButton.addEventListener('click', searchSchools);
+            sortSelect.addEventListener('change', sortSchools);
+      
+            displayTable();
+            displayPagination();
+          </script>
+    </body>
 </html>

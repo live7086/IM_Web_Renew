@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>學會組織</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="teledocumentIcon=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content />
+    <meta name="keywords" content />
+    <meta name="description" content />
+    <title>資訊管理學會</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="newstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- script ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <style>
+      .table-container {
+        margin-top: 60px;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        animation: fadeInUp 1s ease-in-out;
+      }
+
+      .table-container h2 {
+        color: #333;
+        font-size: 36px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .schools-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        animation: zoomIn 1s ease-in-out;
+      }
+
+      .schools-table th {
+        background-color: rgb(114, 174, 200);
+        color: white;
+        padding: 32px 20px; /* 進一步增加上下內邊距為32px */
+      }
+
+      .schools-table td {
+        padding: 20px;
+      }
+
+      .pagination {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .pagination button {
+        background-color: rgb(114, 174, 200);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .pagination button.active {
+        background-color: rgb(80, 140, 166);
+      }
+
+      .schools-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .schools-table tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      .schools-table .link {
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .search-container {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .search-container input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      .search-container button {
+        padding: 10px 20px;
+        background-color: rgb(114, 174, 200);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .sort-container {
+        margin-bottom: 20px;
+        text-align: right;
+      }
+
+      .sort-container select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      @keyframes zoomIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      body {
+        background: linear-gradient(-45deg, #c5e7ff, #a1c4fd, #9ec5fe, #7db9e8);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 導引列 -->
+    <div id="header-placeholder"></div>
+    <!-- 暫時處理懸浮問題 -->
+    <div class="holder"></div>
+    <div class="container">
+      <div class="table-container">
+        <h2>論文查詢</h2>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="搜尋學校名稱..." />
+          <button id="searchButton">搜尋</button>
+        </div>
+        <div class="sort-container">
+          <select id="sortSelect">
+            <option value>排序方式</option>
+            <option value="researchTitle">關鍵字</option>
+            <option value="department">應用領域</option>
+            <option value="keywords">系所</option>
+          </select>
+        </div>
+        <table class="schools-table">
+          <thead>
+            <tr class="bigger">
+              <th>論文名稱</th>
+              <th>應用領域</th>
+              <th>關鍵字</th>
+              <th>作者</th>
+              <th>論文下載</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 使用JavaScript動態生成表格內容,限制每頁10筆資料 -->
+          </tbody>
+        </table>
+        <div class="pagination">
+          <!-- 使用JavaScript動態生成分頁按鈕 -->
+        </div>
+      </div>
+    </div>
+    <!-- 學會&業界 -->
+    <!-- 底部聯絡資訊等 -->
+    <div id="footer"></div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- header footer加載函式 -->
+    <script>
+      // 使用 fetch 函數加載header的內容
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      // 使用 fetch 函數加載footer的內容
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      document.addEventListener("DOMContentLoaded", function () {
+        var aboutLink = document.getElementById("about-link");
+        var aboutDropdown = document.getElementById("about-dropdown");
+
+        aboutLink.addEventListener("click", function (event) {
+          event.preventDefault(); // 阻止預設動作（如導航）
+          aboutDropdown.style.display = "block";
+        });
+      });
+    </script>
+    <!-- 表格載入資料 -->
+    <script>
+      // 模擬從後端獲取的資料
+      const data = [
+        {
+          researchTitle: "併購企業資訊系統整合自製與委外決策模式研究",
+          department: "資訊管理",
+          keywords: "併購企業, 資訊整合, 自製與委外決策模式",
+          authors: "盧春芳, 黃世禎, 傅上珍",
+          documentIcon: "PDF icon 20080002.pdf",
+        },
+        {
+          researchTitle: "知識鏈之探討: 以顧客、供應商與競爭者",
+          department: "資訊管理",
+          keywords: "知識鏈, 顧客知識, 供應商知識, 競爭者知識",
+          authors: "曾淑美 , 吳俊儀",
+          documentIcon: "PDF icon 20080001.pdf",
+        },
+        {
+          researchTitle: "Web Service與定位技術的整合及應用",
+          department: "通訊網路技術",
+          keywords: "Context Awareness, Web Service, 位置資訊",
+          authors: "卓忠志, 潘志勝, 古東明",
+          documentIcon: "PDF icon 20040011.pdf",
+        },
+        {
+          researchTitle: "無線區域網路之位置導向服務品質監測",
+          department: "通訊網路技術",
+          keywords: "無線區域網路, 服務品質, 效能管理, SNMP",
+          authors: "陳彥錚, 陳秋彰",
+          documentIcon: "PDF icon 20040010.pdf",
+        },
+        {
+          researchTitle:
+            "非集中式點對點環境下之快速與低頻寬需求的服務搜尋方法設計",
+          department: "通訊網路技術",
+          keywords: "點對點, 網域名稱伺服器, 非集中式點對點網路, 服務搜尋",
+          authors: "陳青文, 楊朝翔, 顏佩詩",
+          documentIcon: "PDF icon 20040009.pdf",
+        },
+        {
+          researchTitle:
+            "在多重通道隨意網路上利用控制與資料通道頻寬比例使效能最大化之策略",
+          department: "通訊網路技術",
+          keywords: "無線隨意網路, 媒體存取層, 效能, 資料頻道, 控制頻道",
+          authors: "陳青文, 方清宏, 賴俊良, 洪瑞聰",
+          documentIcon: "PDF icon 20040008.pdf",
+        },
+        {
+          researchTitle: "Misuse Detection of New Malicious Emails",
+          department: "通訊網路技術",
+          keywords:
+            "email virus detection, self-organizing maps, network security",
+          authors: "Dong-Her Shih, Chun-Pin Chang, Hsiu-Sen Chiang",
+          documentIcon: "PDF icon 20040007.pdf",
+        },
+        {
+          researchTitle: "協同過濾技術在商品推薦系統上之應用與成效評估",
+          department: "通訊網路技術",
+          keywords: "電子商務, 消費者行為, 協同過濾, 推薦系統",
+          authors: "吳肇銘, 金志聿, 林怡秀",
+          documentIcon: "PDF icon 20040006.pdf",
+        },
+        {
+          researchTitle: "結合IC卡之校園安全網頁系統的設計與實現",
+          department: "通訊網路技術",
+          keywords: "IC卡, WWW, AES, RSA, PHP",
+          authors: "陳軒正, 楊中皇",
+          documentIcon: "PDF icon 20040005.pdf",
+        },
+        {
+          researchTitle: "以電力能源為基礎的蜂巢式階層管理",
+          department: "通訊網路技術",
+          keywords:
+            "隨意式無線網路, 無基礎建設的網路結構, 蜂巢式階層管理架構, 行動代理人, 行動設備",
+          authors: "王淑卿, 嚴國慶 , 周雨韻",
+          documentIcon: "PDF icon 20040004.pdf",
+        },
+      ];
+
+      const tableBody = document.querySelector(".schools-table tbody");
+      const paginationContainer = document.querySelector(".pagination");
+      const searchInput = document.getElementById("searchInput");
+      const searchButton = document.getElementById("searchButton");
+      const sortSelect = document.getElementById("sortSelect");
+      const rowsPerPage = 10;
+      let currentPage = 1;
+      let filteredData = data;
+
+      function displayTable() {
+        const startIndex = (currentPage - 1) * rowsPerPage;
+        const endIndex = startIndex + rowsPerPage;
+        const rows = filteredData.slice(startIndex, endIndex);
+
+        tableBody.innerHTML = rows
+          .map(
+            (row) => `
+                <tr>
+                  <td>${row.researchTitle}</td>
+                  <td>${row.department}</td>
+                  <td>${row.keywords}</td>
+                  <td><a href="${row.authors}" target="_blank" class="link">${row.authors}</a></td>
+                  <td><a href="#">${row.documentIcon}</a></td>
+                </tr>
+              `
+          )
+          .join("");
+      }
+
+      function displayPagination() {
+        const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+
+        paginationContainer.innerHTML = "";
+
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement("button");
+          button.textContent = i;
+          button.classList.toggle("active", i === currentPage);
+          button.addEventListener("click", () => {
+            currentPage = i;
+            displayTable();
+            displayPagination();
+          });
+          paginationContainer.appendChild(button);
+        }
+      }
+
+      function searchSchools() {
+        const searchTerm = searchInput.value.toLowerCase();
+        filteredData = data.filter((row) =>
+          row.researchTitle.toLowerCase().includes(searchTerm)
+        );
+        currentPage = 1;
+        displayTable();
+        displayPagination();
+      }
+
+      function sortSchools() {
+        const sortBy = sortSelect.value;
+        if (sortBy) {
+          filteredData.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
+        } else {
+          filteredData = data;
+        }
+        currentPage = 1;
+        displayTable();
+        displayPagination();
+      }
+
+      searchButton.addEventListener("click", searchSchools);
+      sortSelect.addEventListener("change", sortSchools);
+
+      displayTable();
+      displayPagination();
+    </script>
+  </body>
+</html>
