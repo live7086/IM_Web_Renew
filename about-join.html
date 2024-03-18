@@ -1,7 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>申請入會</title>
+    <title>資訊管理學會</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content />
+    <meta name="keywords" content />
+    <meta name="description" content />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="newstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- script
+        ================================================== -->
+    <script src="js/modernizr.js"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -11,7 +35,7 @@
         overflow-x: hidden;
       }
 
-      .container {
+      .container-join {
         max-width: 960px;
         margin: 0 auto;
         padding: 40px;
@@ -22,55 +46,53 @@
         text-align: center;
         color: #333;
         font-size: 48px;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         position: relative;
-        display: inline-block;
-        left: 50%;
-        transform: translateX(-50%);
+        display: block;
         opacity: 0;
         animation: fadeInDown 1s ease-in-out forwards;
       }
 
-      h1::before {
+      /* h1::before {
         content: "";
         position: absolute;
         bottom: -10px;
         left: 0;
         width: 100%;
         height: 4px;
-        background-color: #007bff;
+        background-color: #72aec8;
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
-      }
+      } */
 
       h1:hover::before {
         transform: scaleX(1);
       }
 
-      h2 {
-        color: #007bff;
+      h2-join {
+        color: #72aec8;
         font-size: 36px;
-        margin-top: 60px;
+        margin-top: 40px;
         margin-bottom: 20px;
         position: relative;
-        display: inline-block;
+        display: block;
         opacity: 0;
         animation: fadeInLeft 1s ease-in-out forwards;
       }
 
-      h2::after {
+      h2-join::after {
         content: "";
         position: absolute;
         bottom: -5px;
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: #007bff;
+        background-color: #72aec8;
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
       }
 
-      h2:hover::after {
+      h2-join:hover::after {
         transform: scaleX(1);
       }
 
@@ -83,13 +105,13 @@
         animation: fadeInUp 1s ease-in-out forwards;
       }
 
-      ul {
+      .content-list {
         list-style-type: none;
         padding: 0;
         margin: 0;
       }
 
-      ul li {
+      .content-list li {
         margin-bottom: 10px;
         padding-left: 20px;
         position: relative;
@@ -97,14 +119,14 @@
         animation: fadeInUp 1s ease-in-out forwards;
       }
 
-      ul li::before {
+      .content-list li::before {
         content: "";
         position: absolute;
         top: 8px;
         left: 0;
         width: 8px;
         height: 8px;
-        background-color: #007bff;
+        background-color: #72aec8;
         border-radius: 50%;
         transform: scale(0);
         animation: scaleIn 0.5s ease-in-out forwards;
@@ -122,7 +144,7 @@
       }
 
       .contact-info a {
-        color: #007bff;
+        color: #72aec8;
         text-decoration: none;
         position: relative;
       }
@@ -134,7 +156,7 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: #007bff;
+        background-color: #72aec8;
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
       }
@@ -154,7 +176,7 @@
         display: inline-block;
         margin: 0 10px;
         padding: 10px 20px;
-        background-color: #007bff;
+        background-color: #72aec8;
         color: #fff;
         text-decoration: none;
         border-radius: 4px;
@@ -205,7 +227,7 @@
       .bg-animation div:nth-child(1) {
         width: 100px;
         height: 100px;
-        background-color: #007bff;
+        background-color: #72aec8;
         top: 20%;
         left: 10%;
       }
@@ -281,17 +303,20 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- 導引列 -->
+    <div id="header-placeholder"></div>
+    <!-- 暫時處理懸浮問題 -->
+    <div class="holder"></div>
+    <div class="container-join">
       <div class="bg-animation">
         <div></div>
         <div></div>
         <div></div>
       </div>
-
       <h1>申請入會</h1>
 
-      <h2>申請入會及會費說明：</h2>
-      <ul>
+      <h2-join>申請入會及會費說明：</h2-join>
+      <ul class="content-list">
         <li>
           本學會秘書處即日起將在學會網站公告會員清查與補繳會費事宜，並個別通知未繳費補繳會費或補登錄會員資料(失聯會員)等作業，若逾期未補繳或登錄會員資料時，將彙集名單送理監事聯席會議審理停權事宜。
         </li>
@@ -309,10 +334,10 @@
         </li>
       </ul>
 
-      <h2>會費規定及入會程序：</h2>
+      <h2-join>會費規定及入會程序：</h2-join>
       <h3>個人會員</h3>
       <p>一、正會員需符合下列條件：</p>
-      <ul>
+      <ul class="content-list">
         <li>(1). 國內外大專講師（含）以上、或在研究發展機構擔任相當職務者</li>
         <li>
           (2).
@@ -321,7 +346,7 @@
         <li>(3). 政府或民營企業擔任資訊管理或其他主管三年以上者</li>
       </ul>
       <p>二、會費相關規定：</p>
-      <ul>
+      <ul class="content-list">
         <li>
           <strong
             >(1). 入會費：學生會員NT$ 100 元、一般會員及正會員NT$ 500 元</strong
@@ -335,21 +360,21 @@
         </li>
       </ul>
       <p>三、入會程序</p>
-      <ul>
+      <ul class="content-list">
         <li>(1). 填寫申請表，電子檔寄交本會秘書處</li>
         <li>(2). 送理事會通過後，通知繳費，完成入會手續</li>
       </ul>
 
       <h3>團體會員</h3>
       <p>一、團體會員需符合之條件：</p>
-      <ul>
+      <ul class="content-list">
         <li>
           (1).
           凡國內外工商業界或學術機構經正會員一人以上之推薦，並經本會理事會通過後，得為團體會員，並推派代表一人，享有正會員權利。
         </li>
       </ul>
       <p>二、會費相關規定：</p>
-      <ul>
+      <ul class="content-list">
         <li><strong>(1). 入會費：NT$ 500 元</strong></li>
         <li>
           <strong
@@ -364,7 +389,7 @@
         <li>(2). 送理事會通過後，通知繳費，完成入會手續</li>
       </ul>
 
-      <h2>相關章程規定：</h2>
+      <h2-join>相關章程規定：</h2-join>
       <p>
         節錄本學會章程中關於會員之基本權利與義務相關規定，讓可敬的會員先進知悉。依中華民國資訊管理學會章程之第二章會員之第八條、第九條及第十二條規定，
       </p>
@@ -395,5 +420,30 @@
         <a href="#"><span>入會申請表(團體會員申請)-102年度</span></a>
       </div>
     </div>
+    <!-- 底部聯絡資訊等 -->
+    <div id="footer"></div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script>
+      // 使用 fetch 函數加載header的內容
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+      // 使用 fetch 函數加載footer的內容
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // 將標頭部分的內容插入到指定的元素中
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error:", error));
+    </script>
   </body>
 </html>
