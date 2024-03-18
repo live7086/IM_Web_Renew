@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>申請入會</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 40px;
+        position: relative;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        font-size: 48px;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: fadeInDown 1s ease-in-out forwards;
+      }
+
+      h1::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #007bff;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      h1:hover::before {
+        transform: scaleX(1);
+      }
+
+      h2 {
+        color: #007bff;
+        font-size: 36px;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+        animation: fadeInLeft 1s ease-in-out forwards;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #007bff;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      h2:hover::after {
+        transform: scaleX(1);
+      }
+
+      p {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeInUp 1s ease-in-out forwards;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+        opacity: 0;
+        animation: fadeInUp 1s ease-in-out forwards;
+      }
+
+      ul li::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #007bff;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: scaleIn 0.5s ease-in-out forwards;
+      }
+
+      .contact-info {
+        margin-top: 60px;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInUp 1s ease-in-out forwards;
+      }
+
+      .contact-info p {
+        margin-bottom: 5px;
+      }
+
+      .contact-info a {
+        color: #007bff;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .contact-info a::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #007bff;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .contact-info a:hover::before {
+        transform: scaleX(1);
+      }
+
+      .files {
+        margin-top: 40px;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInUp 1s ease-in-out forwards;
+      }
+
+      .files a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .files a::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 100%;
+        transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+      }
+
+      .files a:hover::before {
+        width: 200px;
+        height: 200px;
+      }
+
+      .files a span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .bg-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .bg-animation div {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.1;
+        animation: bgAnimation 10s linear infinite;
+      }
+
+      .bg-animation div:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        background-color: #007bff;
+        top: 20%;
+        left: 10%;
+      }
+
+      .bg-animation div:nth-child(2) {
+        width: 150px;
+        height: 150px;
+        background-color: #ff5722;
+        top: 60%;
+        right: 20%;
+        animation-delay: 2s;
+      }
+
+      .bg-animation div:nth-child(3) {
+        width: 80px;
+        height: 80px;
+        background-color: #4caf50;
+        top: 40%;
+        left: 50%;
+        animation-delay: 4s;
+      }
+
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scaleIn {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes bgAnimation {
+        0% {
+          transform: translate(0, 0) rotate(0);
+        }
+        100% {
+          transform: translate(100px, 100px) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg-animation">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <h1>申請入會</h1>
+
+      <h2>申請入會及會費說明：</h2>
+      <ul>
+        <li>
+          本學會秘書處即日起將在學會網站公告會員清查與補繳會費事宜，並個別通知未繳費補繳會費或補登錄會員資料(失聯會員)等作業，若逾期未補繳或登錄會員資料時，將彙集名單送理監事聯席會議審理停權事宜。
+        </li>
+        <li>
+          停權後，會員可隨時繳費或補錄資料，以回復會員各項權利。(依97.12.13中華民國資訊管理學會第十屆第八次理監事聯席會議決議辦理)
+        </li>
+        <li>
+          有關會員年繳會費事宜，新入會會員自繳費日期起，其會員權益算至下一年度年底(12/31)止，第三年起(含舊會員)的年繳會員繳費期間為每年年初至當年五月底止，每年年底清查會員資格一次。
+        </li>
+        <li>會員資料若須更新請email辦理。</li>
+        <li>
+          會費繳交請至郵局劃撥，<strong
+            >劃撥帳號：19411984，戶名：社團法人中華民國資訊管理學會</strong
+          >
+        </li>
+      </ul>
+
+      <h2>會費規定及入會程序：</h2>
+      <h3>個人會員</h3>
+      <p>一、正會員需符合下列條件：</p>
+      <ul>
+        <li>(1). 國內外大專講師（含）以上、或在研究發展機構擔任相當職務者</li>
+        <li>
+          (2).
+          國內外資訊管理或相關研究所畢業，或研究所休習三年以上，並有論文公開發表者
+        </li>
+        <li>(3). 政府或民營企業擔任資訊管理或其他主管三年以上者</li>
+      </ul>
+      <p>二、會費相關規定：</p>
+      <ul>
+        <li>
+          <strong
+            >(1). 入會費：學生會員NT$ 100 元、一般會員及正會員NT$ 500 元</strong
+          >
+        </li>
+        <li>
+          <strong
+            >(2). 年 費：學生會員NT$ 200 元/年、一般會員及正會員NT$ 800
+            元/年、若欲成為永久會員請一次繳交NT$ 8,000 元</strong
+          >
+        </li>
+      </ul>
+      <p>三、入會程序</p>
+      <ul>
+        <li>(1). 填寫申請表，電子檔寄交本會秘書處</li>
+        <li>(2). 送理事會通過後，通知繳費，完成入會手續</li>
+      </ul>
+
+      <h3>團體會員</h3>
+      <p>一、團體會員需符合之條件：</p>
+      <ul>
+        <li>
+          (1).
+          凡國內外工商業界或學術機構經正會員一人以上之推薦，並經本會理事會通過後，得為團體會員，並推派代表一人，享有正會員權利。
+        </li>
+      </ul>
+      <p>二、會費相關規定：</p>
+      <ul>
+        <li><strong>(1). 入會費：NT$ 500 元</strong></li>
+        <li>
+          <strong
+            >(2). 年 費：NT$ 5,000 元/年，若欲成為永久團體會員請一次繳交NT$
+            50,000 元</strong
+          >
+        </li>
+      </ul>
+      <p>三、入會程序</p>
+      <ul>
+        <li>(1). 填寫申請表，電子檔寄交本會秘書處</li>
+        <li>(2). 送理事會通過後，通知繳費，完成入會手續</li>
+      </ul>
+
+      <h2>相關章程規定：</h2>
+      <p>
+        節錄本學會章程中關於會員之基本權利與義務相關規定，讓可敬的會員先進知悉。依中華民國資訊管理學會章程之第二章會員之第八條、第九條及第十二條規定，
+      </p>
+      <ul>
+        <li>第八條 會員有遵守本會章程決議及繳納會費之義務。</li>
+        <li>
+          第九條
+          會員(會員代表)有違反法令章程連續兩年未繳會費或不遵守會員(會員代表)大會決議者得經理事會決議與以警告或停權處分，其危害團體情節重大者得經會員(會員代表)大會決議予以除名。
+        </li>
+        <li>
+          第十二條 正會員及團體會員所派代表有表決權 選舉權
+          被選舉權與罷免權。其他會員僅有列席會員大會之權利；每一正會員(會員代表)為一權。
+        </li>
+      </ul>
+
+      <div class="contact-info">
+        <p>秘書室 敬啟</p>
+        <p>聯絡電話：02-26215656分機2228</p>
+        <p>
+          電子信箱：<a href="mailto:csim.service@gmail.com"
+            >csim.service@gmail.com</a
+          >
+        </p>
+      </div>
+
+      <div class="files">
+        <a href="#"><span>入會申請表(個人會員申請)-102年度</span></a>
+        <a href="#"><span>入會申請表(團體會員申請)-102年度</span></a>
+      </div>
+    </div>
+  </body>
+</html>
